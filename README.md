@@ -11,7 +11,7 @@ This section covers the requirements that must be met by the Python Vnfm Dummy i
 
 * python-vnfm-sdk
 
-## How to install XXX
+## How to install Python Vnfm Dummy
 
 First install the dependencies in your environment by running
 
@@ -29,7 +29,7 @@ python __main__.py
 
 ## How to extend the Python Vnfm Dummy
 
-This example is a good starting point for creating a Vnfm that has dependencies with python libraries
+This example is a good starting point for creating a Vnfm that has strict dependencies on python libraries
 
 ## Issue tracker
 
