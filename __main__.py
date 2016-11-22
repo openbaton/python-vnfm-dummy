@@ -52,7 +52,14 @@ class PythonVnfm(AbstractVnfm):
     def instantiate(self, vnf_record, scripts, vim_instances):
         log.info("Executing instantiate for VNFR: %s" % vnf_record.get("name"))
         log.info("Scripts are: ")
-        if isinstance(scripts, (str, unicode)):
+
+        # py2 also provides the 'unicode' string type
+        try:
+            str_types = (str, unicode)
+        except NameError:
+            str_types = (str)
+
+        if isinstance(scripts, str_types):
             log.info("Script link is: %s" % scripts)
         else:
             for script in scripts:
