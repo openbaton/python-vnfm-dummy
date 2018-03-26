@@ -1,5 +1,5 @@
-import time
 import logging.config
+import time
 
 from openbaton.vnfm import AbstractVnfm, start_vnfm_instances
 
@@ -91,4 +91,4 @@ if __name__ == "__main__":
     conf = "logging.conf"
     logging.config.fileConfig('logging.conf')
     log.info("Starting Python Vnfm")
-    start_vnfm_instances(PythonVnfm, "/etc/openbaton/python/conf.ini", 1)
+    start_vnfm_instances(PythonVnfm, "/etc/openbaton/python/conf.ini", 5)
