@@ -12,4 +12,4 @@ python:
 install:
   - pip install python-vnfm-sdk
 
-script: test_simple.py
+script: ./test_simple.py
