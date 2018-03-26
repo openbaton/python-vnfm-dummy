@@ -19,34 +19,35 @@ First install the dependencies in your environment by running
 pip install python-vnfm-sdk
 ```
 
-Second step, let's create a configuration file for the VNFManager under: /etc/openbaton/_\<type\>_/conf.ini (where type is the **endpoint** specified in the vnfd.json)
-
-This file should be like this:
+Second step, let's create a configuration file for the VNFManager that looks like:
 
 ```ini
 [vnfm]
 
+endpoint_type=RABBIT
+type=python
+endpoint=python-endpoint
 log_path=/var/log/openbaton/
-broker_ip=localhost
-username=admin
-password=openbaton
+broker_ip=127.0.0.1
+autodelete=true
 heartbeat=60
 exchange=openbaton-exchange
-endpoint_type=RABBIT
+
 ```
 
 where:
 
 | name            |    description                                   |
 |-----------------|--------------------------------------------------|
-| log_path        |    path where the logfile will be written        |
-| broker_ip       |   Ip of the rabbitmq broker used by the nfvo     |
-| username        |   username for the rabbitmq broker used by the nfvo |
-| password        |   password for the rabbitmq broker used by the nfvo |
-| exchange        |   exchange name used in the rabbitmq broker by the nfvo |
-| heartbeat       |   heartbeat for the rabbitmq connection          |
+| type            |   The type of the vnfm        |
 | endpoint_type   |   must be RABBIT                                 |
-
+| broker_ip       |   Ip of the rabbitmq broker used by the nfvo     |
+| username        |   username for the rabbitmq broker used to connect to the manager queue of the nfvo|
+| password        |   password for the rabbitmq broker used to connect to the manager queue of the nfvo|
+| exchange        |   exchange name used in the rabbitmq broker by the nfvo |
+| autodelete      |   true or false in case you want the endpoint queue to have the autodelete property (usually true) |
+| heartbeat       |   heartbeat for the rabbitmq connection          |
+| log_path        |   path where the logfile will be written        |
 
 
 See the [sdk documentation](https://pypi.python.org/pypi/python-vnfm-sdk) for more details.
