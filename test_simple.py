@@ -1,8 +1,8 @@
-
+#!/usr/bin/env python
 
 import unittest
 
-from .__main__ import PythonVnfm
+from dummy import PythonVnfm
 
 
 class MyTestCase(unittest.TestCase):
