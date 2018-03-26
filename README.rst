@@ -74,7 +74,10 @@ See the `sdk
 documentation <https://pypi.python.org/pypi/python-vnfm-sdk>`__ for more
 details.
 
-Then just clone this repository and run
+how to run the dummy vnfm in python
+-----------------------------------
+
+Then just clone this repository and within the virtualenv run
 
 .. code:: bash
 
